@@ -1,2 +1,10 @@
 # graphql-example
-repositório com código exemplo de API nodejs com graphql
+
+Repositório com código exemplo de API nodejs com graphql  
+
+## Tecnologias Envolvidas
+- TypeScript
+- Graphql
+-  
+
+
