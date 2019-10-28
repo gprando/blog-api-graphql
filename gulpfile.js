@@ -27,3 +27,4 @@ gulp.task('clean',()=>{
 });
 
 gulp.task('biuld', ['clean', 'static', 'scripts']); 
+//
