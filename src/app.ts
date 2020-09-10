@@ -1,4 +1,7 @@
-import express, {Application, Request, Response, NextFunction} from 'express';
+import express, {Application} from 'express';
+import { graphqlHTTP } from 'express-graphql';
+
+import schema from './graphql/schema';
 
 class App {
   public express: Application;
@@ -9,9 +12,13 @@ class App {
   }
 
   private middleware(): void {
-    this.express.use('/', (request: Request, response: Response, next: NextFunction)=> {
-      response.send({hellow: 'hellow wordl'});
-    });
+    this.express.use(
+      '/graphql',
+      graphqlHTTP({
+        schema: schema,
+        graphiql: true,
+      }),
+    );
   }
 }
 
