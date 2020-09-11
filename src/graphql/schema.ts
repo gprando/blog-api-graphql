@@ -4,8 +4,8 @@ const users: any[] = [
   {
     id: 1,
     name: 'gabriel',
-    email: 'gabriel@email.com'
-  }
+    email: 'gabriel@email.com',
+  },
 ];
 
 const typeDefs = `
@@ -26,16 +26,16 @@ const typeDefs = `
 
 const resolvers = {
   Query: {
-    allUsers: () => users
+    allUsers: () => users,
   },
 
   Mutation: {
-    createUser: (parent: any, args: {name: String, email: String}) => {
-      const newUser = Object.assign({id: users.length +1}, args);
+    createUser: (parent: any, args: {name: string, email: string}) => {
+      const newUser = { id: users.length + 1, ...args };
       users.push(newUser);
       return newUser;
-    }
-  }
-}
+    },
+  },
+};
 
-export default makeExecutableSchema({typeDefs, resolvers});
+export default makeExecutableSchema({ typeDefs, resolvers });
