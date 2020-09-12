@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import { graphqlHTTP } from 'express-graphql';
 
 import schema from './graphql/schema';
+import './database';
 
 class App {
   public express: Application;
